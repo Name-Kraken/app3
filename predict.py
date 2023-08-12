@@ -83,7 +83,9 @@ st.title('どの本能活性化されている？')
 # ライブラリ追加
 from PIL import Image
 
-img = Image.open(r'C:\Users\royal\Desktop\プログラミング\AI_app\logo.jpg')
+url = 'https://github.com/Name-Kraken/app1/releases/download/logo/logo.jpg'
+response = requests.get(url)
+img = Image.open(BytesIO(response.content))
 
 # use_column_width 実際のレイアウトの横幅に合わせる
 st.image(img, caption='', use_column_width=True)
