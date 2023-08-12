@@ -1,0 +1,48 @@
+streamlit run predict.py
+
+#githubにファイル追加
+git add 追加したいファイル
+git commit -m "add files"
+git push origin master
+git push origin main
+
+
+#LFS使用の一連の流れ
+
+#初期化
+git init
+
+#git lfs初期化
+git lfs install
+
+#大容量ファイル追跡(pthファイル追加)
+git lfs track "*.pth"
+
+#.gitattributesフォルダをステージに乗せる
+git add .gitattributes
+
+#変更のコミット
+git commit -m "Add Git LFS for .pth files"
+
+#大容量ファイルをステージに乗せる
+git add model.pth
+
+#ファイルのコミット: 大容量のファイルをコミット(他の物も乗せれる)
+git commit -m "Add model.pth file"
+
+#リモートリポジトリの追加
+git remote add origin <your-remote-repository-url>
+
+#プッシュ
+git push origin master
+
+
+
+通常
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Name-Kraken/app1.git
+git push -u origin main
